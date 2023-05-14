@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MRec</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--    Bootstrap CDN   -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--    FontAwesome CSS for star ratings form  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--    Internal Stylesheet   -->
+	 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+
+</head>
+
+<body style="background-color:black;">
+    <!--        Navbar with Home, Description based and Metadata Based,Logout quick links   -->
+      <nav class="navbar sticky-top">
+        <a class="navbar-brand" href="/home">Movie Recommender</a>
+            Hi, {{ session['user'] }}
+            <a href="/home">Home</a>
+            <a href="/description">Description Based</a>
+            <a href="/metadata">Metadata Based</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+  <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="color:white">Search for a Movie!</h1>
+                <h5 style="color:white">Get similar movies based on similar Plot</h5>
+               <!-- Form for Movie Search-->
+                <div class="form-group">
+                    <input id="movieSearch" name="movie" type="text" class="form-control"><br>
+                    </div>
+                <div class="form-group">
+                    <button disabled="true" id="search" class="btn btn-lg btn-warning" type="submit">Search</button>
+                    </div>
+                <!--  Form End   -->
+            </div>
+            <!-- Loading GIF -->
+            <div id="#loader" class="loader text-center">
+            </div>
+            <!--            Error Message  -->
+            <div class="error">
+            <h3>Sorry! The movie you requested is not in our database.
+    Please check the spelling or try with other movies!</h3>
+         </div>
+        </div>
+    </div>
+	<div class="success">
+	      <h2 id="name" class="text-uppercase">{{title}}</h2>
+        <br>
+        </div>
+
+
+
+
+    <!--    JQuery, Internal Javascript and Popper JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="text/javascript" src="{{url_for('static', filename='recommendDescription.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

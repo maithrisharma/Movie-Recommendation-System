@@ -1,0 +1,309 @@
+/* Styles for elements with class "hero" */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero::before {
+      content: "";
+      background-image: url('../static/background1.jpg');
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.50;
+}
+
+.child {
+  position: relative;
+  color: #ffffff;
+  /* font-size: 14rem; */
+  line-height: 0.9;
+  text-align: center;
+}
+
+/* Styles for Navbar */
+nav.navbar.sticky-top{
+    background-color: #00A6B8;
+    color:white;
+    justify-content: right;
+}
+.navbar-brand {
+    margin-right: 40%;
+}
+nav a{
+    color:white;
+    padding-left: 1.2rem;
+}
+
+/* Styles for list */
+li{
+    list-style:none;
+    padding-right: 20px;
+
+}
+.price{
+    color:white;
+}
+/* Styles for elements with class movie */
+.movie {
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	resize: none;
+}
+
+/* Styles for element with id "movieDetails" */
+#movieDetails{
+    display:flex;
+
+}
+/* Styles for element with id "overview" */
+#overview{
+    text-align:justify;
+}
+/* Styles for element with id "movieDets" */
+#movieDets{
+        margin-left: 5%;
+    margin-right: 5%;
+}
+/* Styles for element with class movieContent */
+.movieContent {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	margin-left:10%;
+	margin-right:10%;
+}
+/* Styles for element with class providers */
+.providers{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+span.presentation_type {
+    color:white;
+}
+.movie-content > div {
+    margin:20px;
+}
+.hide{
+    display:none;
+}
+/* Styles for button */
+.btn-block{
+	width: 15%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: #e4e0e0;
+}
+/* Styles for body element */
+#body {
+
+	background-color: #181818;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+.details {
+	margin-left: 50px;
+	color:white;
+}
+
+.ott_provider{
+    text-align:center;
+}
+
+/* Styles for Footer */
+.footer {
+	color: #e4e0e0;
+	text-align:right;
+	position: fixed;
+ 	bottom: 20px;
+ 	right: 20px;
+ 	width: 100%;
+}
+
+h1 {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #e50914;
+    font-weight: bold;
+    margin-top: 30px;
+    text-shadow: #000000 0px 0px 13px;
+ }
+
+/* Styles for element with id "name" */
+#name {
+	color: white;
+	padding: 1px;
+	text-align:center;
+}
+
+h6 {
+    margin-bottom: 20px;
+}
+
+.mainMovie{
+    border-radius: 40px;
+    margin-left: 35px;
+}
+h4{
+    text-align:justify;
+    color:white;
+    line-height: 2.0;
+}
+.card:hover {
+	cursor: pointer;
+}
+
+/* Styles for elements with class error */
+.error {
+	display: none;
+	color: white;
+}
+
+/* Styles for popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  z-index: 9;
+  border:4px solid;
+  padding:10px;
+  background-color: black;
+  opacity: 0.9;
+  text-align:center;
+}
+
+/* Styles for form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Styles for full width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+/* Styles for Loader GIF */
+.loader{
+		display: none;
+		position: fixed;
+		z-index: 100;
+		left: 0;
+		top:0;
+		width: 100%;
+		height: 100%;
+		background-image: url("../static/loader.gif");
+		background-size: 20%;
+		background-position: 50% 50%;
+		background-color: rgba(255, 255, 255, 1);
+		background-repeat: no-repeat;
+		-webkit-transition: background-image 0.2s ease-in-out;
+		transition: background-image 0.2s ease-in-out;
+	}
+
+	#loader-text {
+		vertical-align: middle;
+		color:white;
+	}
+
+div.ott_provider h3 {
+    color: white;
+    padding-bottom:10px;
+}
+
+
+/* Styles for Similar Cards */
+.card-featured {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+}
+
+.card-featured img {
+  display: block;
+  width: 100%;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card-data {
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  opacity: 0.3;
+  transition: top 0.4s, opacity 0.3s;
+}
+
+.card-data .card-name{
+  color: white;
+  text-transform: uppercase;
+}
+.card-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  padding: 1rem;
+}
+
+
+.card-featured:hover .overlay {
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.card-featured:hover .card-data {
+  top: 0%;
+  opacity: 1;
+  transition: top 0.4s, opacity 0.6s;
+}

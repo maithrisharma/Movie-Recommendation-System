@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MRec</title>
+</head>
+
+<body>
+
+            <!-- Displayed when the responses are OK -->
+	        <div class="success">
+	        <h2 id="name" class="text-uppercase">{{title}}</h2>
+            <br>
+
+	        </div>
+            <div id="movieDets">
+                <div id="movieDetails">
+                    <div>
+                        <!-- Poster of the Searched Movie -->
+                        <img class="mainMovie" height="400" width="250" src={{poster}}>
+                    </div>
+
+                    <!-- Detailed Movie Information of the searched Movie -->
+                    <div class="details"><br>
+                        <h6>TITLE: &nbsp;{{title}}</h6><br>
+                        <h6 id="overview" >OVERVIEW: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{overview}}</h6>
+                        <h6>RATING: &nbsp;{{vote_average}}/10 ({{vote_count}} votes)</h6>
+                        <h6>GENRE: &nbsp;{{genres}}</h6>
+                        <h6>RELEASE DATE: &nbsp;{{release_date}}</h6>
+                        <h6>RUNTIME: &nbsp;{{runtime}}</h6>
+                        <h6>STATUS: &nbsp;{{status}}</h6>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+
+            <!-- Web scraped information of Watch providers -->
+            {{watch_providers | safe}}
+
+            <!-- Similar Movie Information -->
+            {% if movie_cards|length > 1 %}
+
+            <br><br>
+            <div class="movie" style="color: #E8E8E8;">
+                    <h3 style="text-align:center;">SIMILAR MOVIES BASED ON METADATA</h3>
+            </div>
+
+            <!-- Rating Form when scrolled to similar movies section -->
+            <div class="movieContent" onscroll="openRating()">
+                <!-- Each similar movie displayed as Card with the movie poster and title -->
+                {% for poster, title in movie_cards.items() if not movie_cards.hidden %}
+                <div class="card-featured" title="{{title}}" onclick="movieCard(this)">
+                        <div class="">
+
+                              <img src={{poster}} alt="{{title}} - poster" style="width:300px;height:300px;">
+
+                            <div class="card-data" >
+                                <h5 class="card-name">{{title|capitalize}}</h5>
+                                <button class="card-button btn btn-danger"> See More </button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% endif %}
+
+            <!-- Star Rating Form with feedback -->
+        <div class="form-popup" id="myForm">
+                <h6 style="color:white;">Your feedback is valuable to us!</h6>
+                <h6 style="color:white;">How would you rate our recommendations?</h6>
+            <div align="center">
+                <i class="fa fa-star fa-2x" data-index="0"></i>
+                <i class="fa fa-star fa-2x" data-index="1"></i>
+                <i class="fa fa-star fa-2x" data-index="2"></i>
+                <i class="fa fa-star fa-2x" data-index="3"></i>
+                <i class="fa fa-star fa-2x" data-index="4"></i>
+
+            </div>
+            <br>
+            <div style="text-align:center;">
+
+            <textarea style="width: -webkit-fill-available;" name="message" rows="5" id="message" placeholder="Please provide your feedback."></textarea><br>
+                <button class="btn btn-primary" id="feedbackbtnMeta">Submit</button>
+            </div>
+                </div>
+
+  </body>
+</html>
